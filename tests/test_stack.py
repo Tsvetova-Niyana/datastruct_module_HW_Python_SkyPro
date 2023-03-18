@@ -16,21 +16,21 @@ class TestStack(unittest.TestCase):
 
         assert stack.top == 'test'
 
-    def test_assert_stack_top_data_push_in_stack_one(self):
+    def test_check_stack_top_data_push_in_stack_one(self):
         """Проверка корректности работы метода push при передаче одного узла (атрибут top.data)"""
         stack = Stack()
         stack.push('test')
 
         assert stack.top.data == 'test'
 
-    def test_assert_stack_top_next_node_push_in_stack_one(self):
+    def test_check_stack_top_next_node_push_in_stack_one(self):
         """Проверка корректности работы метода push при передаче одного узла (атрибут top.next_node)"""
         stack = Stack()
         stack.push('test')
 
         assert stack.top.next_node is None
 
-    def test_assert_stack_top_data_push_in_stack_two(self):
+    def test_check_stack_top_data_push_in_stack_two(self):
         """Проверка корректности работы метода push при передаче двух узлов (атрибут top.data)"""
         stack = Stack()
         stack.push('test')
@@ -38,7 +38,7 @@ class TestStack(unittest.TestCase):
 
         assert stack.top.data == 'test2'
 
-    def test_assert_next_node__node_one_level_back_push_in_stack_two(self):
+    def test_check_next_node__node_one_level_back_push_in_stack_two(self):
         """Проверка корректности работы метода push при передаче двух узлов
             (атрибут next_node.data - предыдущий уровень)"""
         stack = Stack()
@@ -47,7 +47,7 @@ class TestStack(unittest.TestCase):
 
         assert stack.top.next_node.data == 'test'
 
-    def test_assert_stack_top_data_push_in_stack_many(self):
+    def test_check_stack_top_data_push_in_stack_many(self):
         """Проверка корректности работы метода push при передаче нескольких узлов (атрибут top.data)"""
         stack = Stack()
         stack.push('test')
@@ -56,7 +56,7 @@ class TestStack(unittest.TestCase):
 
         assert stack.top.data == 'test3'
 
-    def test_assert_next_node_one_level_back_push_in_stack_many(self):
+    def test_check_next_node_one_level_back_push_in_stack_many(self):
         """Проверка корректности работы метода push при передаче нескольких узлов
             (первый уровень)"""
         stack = Stack()
@@ -66,7 +66,7 @@ class TestStack(unittest.TestCase):
 
         assert stack.top.next_node.data == 'test2'
 
-    def test_assert_next_node_two_level_push_in_stack_many(self):
+    def test_check_next_node_two_level_push_in_stack_many(self):
         """Проверка корректности работы метода push при передаче нескольких узлов
             (второй уровень)"""
         stack = Stack()
@@ -76,7 +76,7 @@ class TestStack(unittest.TestCase):
 
         assert stack.top.next_node.next_node.data == 'test'
 
-    def test_assert_stack_top_next_node_none_push_in_stack_many(self):
+    def test_check_stack_top_next_node_none_push_in_stack_many(self):
         """Проверка корректности работы метода push при передаче нескольких узлов
             (нулевой уровень)"""
         stack = Stack()
@@ -86,7 +86,7 @@ class TestStack(unittest.TestCase):
 
         assert stack.top.next_node.next_node.next_node is None
 
-    def test_assert_raise_push_in_stack_many(self):
+    def test_check_raise_push_in_stack_many(self):
         stack = Stack()
         stack.push('test')
         stack.push('test2')
