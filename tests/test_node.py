@@ -5,7 +5,7 @@ from datastruct_module.Node import Node
 class TestNode(unittest.TestCase):
     """Тест класса Node"""
 
-    def test_assert_node_at_init_node_without_node_next(self):
+    def test_check_node_at_init_node_without_node_next(self):
         """Проверка корректной инициализации класса Node:
              с атрибутом data
              без атрибута next_node"""
@@ -13,7 +13,7 @@ class TestNode(unittest.TestCase):
 
         assert node.data == 'test'
 
-    def test_assert_node_text_at_init_node_without_node_next(self):
+    def test_check_node_text_at_init_node_without_node_next(self):
         """Проверка корректной инициализации класса Node:
              с атрибутом data
              без атрибута next_node"""
@@ -21,7 +21,7 @@ class TestNode(unittest.TestCase):
 
         assert node.next_node is None
 
-    def test_assert_node_at_init_node_with_node_next(self):
+    def test_check_node_at_init_node_with_node_next(self):
         """Проверка корректной инициализации класса Node:
              c атрибутом data
              c атрибутом next_node"""
@@ -29,7 +29,7 @@ class TestNode(unittest.TestCase):
 
         assert node.data == 'test'
 
-    def test_assert_node_next_at_init_node_with_node_next(self):
+    def test_check_node_next_at_init_node_with_node_next(self):
         """Проверка корректной инициализации класса Node:
              c атрибутом data
              c атрибутом next_node"""
