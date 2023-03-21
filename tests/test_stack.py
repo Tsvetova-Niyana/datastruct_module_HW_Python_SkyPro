@@ -1,5 +1,5 @@
 import unittest
-from datastruct_module.Stack import Stack
+from datastruct_module.stack import Stack
 
 
 class TestStack(unittest.TestCase):
@@ -95,3 +95,57 @@ class TestStack(unittest.TestCase):
         with self.assertRaises(AttributeError):
             """Проверка вывода ошибки при попытке получения информации из атрибута next_node.data нулевого уровня"""
             stack.top.next_node.next_node.next_node.data
+
+
+    def test_pop_last_node(self):
+        stack = Stack()
+        stack.push('data1')
+        data = stack.pop()
+
+        assert stack.top is None
+
+    def test_check_data_by_pop_last_node(self):
+        stack = Stack()
+        stack.push('data1')
+        data = stack.pop()
+
+        assert data == 'data1'
+
+
+    def test_pop_many_last_node(self):
+        stack = Stack()
+        stack.push('data1')
+        stack.push('data2')
+        stack.push('data3')
+        stack.pop()
+        stack.pop()
+
+        assert stack.top.data == 'data1'
+
+    def test_check_data_by_pop_many_last_node(self):
+        stack = Stack()
+        stack.push('data1')
+        stack.push('data2')
+        stack.push('data3')
+        stack.pop()
+        data = stack.pop()
+
+        assert data == 'data2'
+
+    def test_pop_one_of_many_last_node(self):
+        stack = Stack()
+        stack.push('data1')
+        stack.push('data2')
+        stack.push('data3')
+        stack.pop()
+
+        assert stack.top.data == 'data2'
+
+    def test_check_data_by_pop_one_of_many_last_node(self):
+        stack = Stack()
+        stack.push('data1')
+        stack.push('data2')
+        stack.push('data3')
+        data = stack.pop()
+
+        assert data == 'data3'
