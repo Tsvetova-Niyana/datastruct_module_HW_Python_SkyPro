@@ -98,6 +98,7 @@ class TestStack(unittest.TestCase):
 
 
     def test_pop_last_node(self):
+        """Удаление последнего узла"""
         stack = Stack()
         stack.push('data1')
         data = stack.pop()
@@ -105,6 +106,7 @@ class TestStack(unittest.TestCase):
         assert stack.top is None
 
     def test_check_data_by_pop_last_node(self):
+        """Проверка удаленного последнего узла"""
         stack = Stack()
         stack.push('data1')
         data = stack.pop()
@@ -113,6 +115,7 @@ class TestStack(unittest.TestCase):
 
 
     def test_pop_many_last_node(self):
+        """Удаление нескольких узлов"""
         stack = Stack()
         stack.push('data1')
         stack.push('data2')
@@ -123,6 +126,7 @@ class TestStack(unittest.TestCase):
         assert stack.top.data == 'data1'
 
     def test_check_data_by_pop_many_last_node(self):
+        """Проверка последнего из удаленных узлов"""
         stack = Stack()
         stack.push('data1')
         stack.push('data2')
@@ -133,6 +137,7 @@ class TestStack(unittest.TestCase):
         assert data == 'data2'
 
     def test_pop_one_of_many_last_node(self):
+        """Удаление одного из нескольких узлов"""
         stack = Stack()
         stack.push('data1')
         stack.push('data2')
@@ -142,6 +147,7 @@ class TestStack(unittest.TestCase):
         assert stack.top.data == 'data2'
 
     def test_check_data_by_pop_one_of_many_last_node(self):
+        """Проверка последнего удаленного узла"""
         stack = Stack()
         stack.push('data1')
         stack.push('data2')
@@ -149,3 +155,5 @@ class TestStack(unittest.TestCase):
         data = stack.pop()
 
         assert data == 'data3'
+
+
