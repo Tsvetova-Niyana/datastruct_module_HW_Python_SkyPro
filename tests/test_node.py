@@ -1,5 +1,5 @@
 import unittest
-from datastruct_module.Node import Node
+from datastruct_module.node import Node
 
 
 class TestNode(unittest.TestCase):
