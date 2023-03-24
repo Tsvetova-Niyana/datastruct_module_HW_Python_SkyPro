@@ -4,6 +4,7 @@ from datastruct_module.stack import Stack
 
 class TestStack(unittest.TestCase):
     """Тест класса Stack"""
+
     def test_init_stack_without_parameters(self):
         """Проверка инициализации класса Stack без явной передачи атрибутов"""
         stack = Stack()
@@ -96,7 +97,6 @@ class TestStack(unittest.TestCase):
             """Проверка вывода ошибки при попытке получения информации из атрибута next_node.data нулевого уровня"""
             stack.top.next_node.next_node.next_node.data
 
-
     def test_pop_last_node(self):
         """Удаление последнего узла"""
         stack = Stack()
@@ -112,7 +112,6 @@ class TestStack(unittest.TestCase):
         data = stack.pop()
 
         assert data == 'data1'
-
 
     def test_pop_many_last_node(self):
         """Удаление нескольких узлов"""
@@ -156,4 +155,28 @@ class TestStack(unittest.TestCase):
 
         assert data == 'data3'
 
+    def test_check_stack_top_pop_in_stack_not_any(self):
+        """Проверка работы метода pop(), в случае если узлов не существует"""
+        stack = Stack()
+        stack.push('data1')
+        stack.push('data2')
+        stack.push('data3')
+        stack.pop()
+        stack.pop()
+        stack.pop()
+        stack.pop()
 
+        assert stack.top is None
+
+    def test_check_data_pop_in_stack_not_any(self):
+        """Проверка работы метода pop(), в случае если узлов не существует"""
+        stack = Stack()
+        stack.push('data1')
+        stack.push('data2')
+        stack.push('data3')
+        stack.pop()
+        stack.pop()
+        stack.pop()
+        data = stack.pop()
+
+        assert data is None
