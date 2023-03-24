@@ -40,8 +40,19 @@ if __name__ == '__main__':
     print(queue.head.next_node.data)
     print(queue.tail.data)
     print(queue.tail.next_node)
-    print(queue.tail.next_node.data)
+    # print(queue.tail.next_node.data)
 
+    print()
+    print('----------------------------------------------------------------------------------------------')
+    queue1 = Queue()
+    queue1.enqueue('data1')
+    queue1.enqueue('data2')
+    queue1.enqueue('data3')
 
+    print(queue1.dequeue())  # data1
 
-
+    print(queue1.dequeue())  # data2
+    #
+    print(queue1.dequeue())  # data3
+    #
+    print(queue1.dequeue())  # None
