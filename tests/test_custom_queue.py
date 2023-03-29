@@ -126,3 +126,103 @@ class TestQueue(unittest.TestCase):
 
         with self.assertRaises(AttributeError):
             queue.tail.next_node.data
+
+    def test_check_data_dequeue_one_node_in_queue(self):
+        """Проверка корректности работы метода enqueue при передаче двух узлов (атрибут tail.next_node)"""
+        queue = Queue()
+
+        queue.enqueue('test1')
+        queue.enqueue('test2')
+        queue.enqueue('test3')
+
+        data = queue.dequeue()
+        assert data == 'test1'
+
+    def test_check_head_dequeue_one_node_in_queue(self):
+        """Проверка корректности работы метода enqueue при передаче двух узлов (атрибут tail.next_node)"""
+        queue = Queue()
+
+        queue.enqueue('test1')
+        queue.enqueue('test2')
+        queue.enqueue('test3')
+
+        queue.dequeue()
+        assert queue.head.data == 'test2'
+
+    def test_check_data_dequeue_many_node_in_queue(self):
+        """Проверка корректности работы метода enqueue при передаче двух узлов (атрибут tail.next_node)"""
+        queue = Queue()
+
+        queue.enqueue('test1')
+        queue.enqueue('test2')
+        queue.enqueue('test3')
+
+        queue.dequeue()
+        data = queue.dequeue()
+        assert data == 'test2'
+
+    def test_check_head_dequeue_many_node_in_queue(self):
+        """Проверка корректности работы метода enqueue при передаче двух узлов (атрибут tail.next_node)"""
+        queue = Queue()
+
+        queue.enqueue('test1')
+        queue.enqueue('test2')
+        queue.enqueue('test3')
+
+        queue.dequeue()
+        queue.dequeue()
+        assert queue.head.data == 'test3'
+
+    def test_check_data_dequeue_all_node_in_queue(self):
+        """Проверка корректности работы метода enqueue при передаче двух узлов (атрибут tail.next_node)"""
+        queue = Queue()
+
+        queue.enqueue('test1')
+        queue.enqueue('test2')
+        queue.enqueue('test3')
+
+        queue.dequeue()
+        queue.dequeue()
+        data = queue.dequeue()
+        assert data == 'test3'
+
+    def test_check_head_dequeue_all_node_in_queue(self):
+        """Проверка корректности работы метода enqueue при передаче двух узлов (атрибут tail.next_node)"""
+        queue = Queue()
+
+        queue.enqueue('test1')
+        queue.enqueue('test2')
+        queue.enqueue('test3')
+
+        queue.dequeue()
+        queue.dequeue()
+        queue.dequeue()
+        assert queue.head is None
+
+    def test_check_data_dequeue_not_any_node_in_queue(self):
+        """Проверка корректности работы метода enqueue при передаче двух узлов (атрибут tail.next_node)"""
+        queue = Queue()
+
+        queue.enqueue('test1')
+        queue.enqueue('test2')
+        queue.enqueue('test3')
+
+        queue.dequeue()
+        queue.dequeue()
+        queue.dequeue()
+        data = queue.dequeue()
+        assert data is None
+
+    def test_check_head_dequeue_not_any_node_in_queue(self):
+        """Проверка корректности работы метода enqueue при передаче двух узлов (атрибут tail.next_node)"""
+        queue = Queue()
+
+        queue.enqueue('test1')
+        queue.enqueue('test2')
+        queue.enqueue('test3')
+
+        queue.dequeue()
+        queue.dequeue()
+        queue.dequeue()
+        queue.dequeue()
+        assert queue.head is None

@@ -22,3 +22,16 @@ class Queue:
         else:
             self.tail.next_node = node_new
             self.tail = node_new
+
+    def dequeue(self):
+        """Реализуйте метод `dequeue()` класса `Queue`.
+        Метод удаляет из очереди крайний левый элемент (первый добавленный),
+        реализуя правило FIFO (First In, First Out) и возвращает данные удаленного экземпляра класса `Node`."""
+
+        if self.head == None:
+            return None
+        else:
+            removed = self.head.data
+            self.head = self.head.next_node
+        return removed
+
