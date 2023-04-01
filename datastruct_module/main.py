@@ -29,13 +29,25 @@ if __name__ == '__main__':
     data = stack.pop()
     print(stack.top)
     print(data)
+    print()
 
 
     ll = LinkedList()
     ll.insert_beginning({'id': 1})
+    print(ll.head.data)
+    print(ll.head.next_node)
+
     ll.insert_at_end({'id': 2})
+    print(ll.head.data)
+    print(ll.tail.data)
+    # print(ll.head.next_node.data)
     ll.insert_at_end({'id': 3})
+    print(ll.head.data)
+    print(ll.tail.data)
+    # print(ll.head.next_node.data)
+
     ll.insert_beginning({'id': 0})
+    print('_________________________')
     ll.print_ll()
     # {'id': 0} -> {'id': 1} -> {'id': 2} -> {'id': 3} -> None
     # print()
