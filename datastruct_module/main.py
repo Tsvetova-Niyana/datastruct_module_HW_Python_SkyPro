@@ -1,4 +1,5 @@
 from datastruct_module.custom_queue import Queue
+from datastruct_module.linked_list import LinkedList
 from datastruct_module.stack import Stack
 
 if __name__ == '__main__':
@@ -29,6 +30,14 @@ if __name__ == '__main__':
     print(stack.top)
     print(data)
 
+
+    ll = LinkedList()
+    ll.insert_beginning({'id': 1})
+    ll.insert_at_end({'id': 2})
+    ll.insert_at_end({'id': 3})
+    ll.insert_beginning({'id': 0})
+    ll.print_ll()
+    # {'id': 0} -> {'id': 1} -> {'id': 2} -> {'id': 3} -> None
     # print()
     # data = stack.pop()
     # print(stack.top)
